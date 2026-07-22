@@ -165,12 +165,13 @@ function Update-BingImageOfTheDayMetadata {
                          -CreatorWorkURL="$($imageMetadata.copyrightlink)" `
                          -BaseURL="$($imageMetadata.url)" `
                          $($file.FullName)
-        $null = Rename-Item -Path $file.FullName $($file.BaseName + "_meta" + $file.Extension)
+        $metafile = Rename-Item -PassThru -Path $file.FullName $($file.BaseName + "_meta" + $file.Extension)
         $filesUpdatedCount++
 
         $null = $processedFiles.Add([PSCustomObject]@{
+            Name = $metafile.Name
+            FullName = $metafile.FullName
             Caption = $caption
-            FileName = $($file.BaseName + "_meta" + $file.Extension)
         })
     }
     Write-Verbose ""
