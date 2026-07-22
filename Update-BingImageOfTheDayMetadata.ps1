@@ -22,7 +22,7 @@
     None. You can't pipe objects to Update-BingImageOfTheDayMetadata.
 
     .OUTPUTS
-    Writes a collection of objects, each of which contains the title and filename of a modified image.
+    Writes a collection of objects, each of which contains the name, full name including path, and caption of a modified image(s) updated.
     
     .LINK
     Git Repo: https://github.com/arebee/Bing-wallpapers-x-plat
